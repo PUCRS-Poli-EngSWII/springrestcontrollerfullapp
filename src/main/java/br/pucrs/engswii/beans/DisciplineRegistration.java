@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 public class DisciplineRegistration {
 
-    List<Discipline> disciplines;
+    private final List<Discipline> disciplines;
 
     public DisciplineRegistration() {
         this.disciplines = new ArrayList<>();
@@ -25,5 +25,9 @@ public class DisciplineRegistration {
                     response.set("Insert successful");
                 });
         return response.get();
+    }
+
+    public List<Discipline> getDisciplines() {
+        return disciplines;
     }
 }
